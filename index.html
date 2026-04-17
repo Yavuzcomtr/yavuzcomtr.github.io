@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yavuz Halimergün | Personal Website</title>
+  <meta name="description" content="Personal academic website of Yavuz Halimergün. Research in transport planning, GIS-based analysis, public transport integration, walkability, and sustainable urban mobility.">
+  <meta name="author" content="Yavuz Halimergün">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #5b6472;
+      --line: #e5e7eb;
+      --accent: #0b57d0;
+      --accent-dark: #0f172a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 28px 18px 56px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--accent-dark);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #ffffff, #eef4ff);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 34px 28px;
+      margin-bottom: 22px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 26px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 40px;
+      line-height: 1.18;
+      color: var(--accent-dark);
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .hero-text {
+      font-size: 15px;
+      color: #374151;
+      margin-bottom: 18px;
+      text-align: justify;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      background: #ffffff;
+      color: var(--accent);
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+
+    .btn:hover {
+      text-decoration: underline;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .hero-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: var(--accent-dark);
+      font-size: 18px;
+    }
+
+    .hero-card p {
+      margin: 0 0 10px;
+      color: #445160;
+      font-size: 14px;
+    }
+
+    .section {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px 24px;
+      margin-bottom: 18px;
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 28px;
+      color: var(--accent-dark);
+    }
+
+    .section p {
+      margin-top: 0;
+      color: #374151;
+      font-size: 15px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .mini-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      background: #fbfcfe;
+    }
+
+    .mini-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: var(--accent-dark);
+    }
+
+    .mini-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #374151;
+      font-size: 15px;
+    }
+
+    .mini-card li {
+      margin-bottom: 8px;
+    }
+
+    .featured-paper {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      background: #fbfcfe;
+      margin-bottom: 14px;
+    }
+
+    .featured-paper-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .featured-paper p {
+      margin-bottom: 12px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-list a {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 700;
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .contact-list a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      padding: 12px 0 0;
+    }
+
+    @media (max-width: 820px) {
+      .hero-grid,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .section {
+        padding: 22px 18px;
+      }
+
+      .hero {
+        padding: 28px 20px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        padding: 18px 10px 40px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .section h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="nav">
+      <div class="brand">Yavuz Halimergün</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>Yavuz Halimergün</h1>
+          <div class="subtitle">Civil Engineer (MSc.) • Transport Planning • GIS-Based Public Transport Research</div>
+          <div class="hero-text">
+            <p>
+              Welcome to my personal academic website. My work focuses on transport planning, public transport integration, GIS-based spatial analysis, sustainable urban mobility, and accessibility-oriented transport systems research.
+            </p>
+            <p>
+              I am particularly interested in how rail and bus systems can be integrated to improve efficiency, accessibility, and environmental performance.
+            </p>
+        </div>
+          <div class="button-row">
+            <a class="btn primary" href="/publications/">View Publications</a>
+            <a class="btn" href="https://www.linkedin.com/in/yavuzcomtr/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About</h2>
+          <p>
+          I am a civil engineer specializing in transport planning and public transportation systems, with a strong focus on GIS-based spatial analysis and sustainable urban mobility. My academic and professional work centers on understanding and improving the integration of different transport modes, particularly rail and bus systems, in rapidly developing urban environments.
+          </p>
+          <p>
+          My research primarily explores how public transport networks can be optimized through data-driven and spatially explicit approaches. I have worked extensively on tram–bus integration, accessibility analysis, and the evaluation of transport systems based on environmental and economic performance indicators. By combining Geographic Information Systems (GIS) with transport planning methodologies, I aim to develop practical and scalable solutions for more efficient and sustainable mobility systems.
+          </p>
+          <p>
+          In addition to network integration, I am particularly interested in walkability and accessibility in urban transport systems. My work examines how pedestrian access to transit infrastructure influences overall system performance and user behavior, contributing to the development of more inclusive and sustainable cities.
+          </p>
+          <p>
+          Professionally, I am involved in transport planning practices within a municipal context, where I contribute to real-world applications of transport policies, network design, and mobility strategies. This practical experience allows me to bridge the gap between academic research and implementation, ensuring that my work remains both theoretically grounded and operationally relevant.
+          </p>
+          <p>
+          My current research direction focuses on developing integrated, GIS-based analytical frameworks for evaluating and optimizing public transport systems. I aim to contribute to the advancement of sustainable urban mobility by supporting data-driven decision-making processes in transport planning and policy development.
+          </p>
+    </section>
+
+    <section id="research" class="section">
+      <h2>Research Areas</h2>
+      <div class="grid-2">
+        <div class="mini-card">
+          <h3>Core Topics</h3>
+          <ul>
+            <li>Transport Planning</li>
+            <li>Public Transport Integration</li>
+            <li>GIS-Based Spatial Analysis</li>
+            <li>Sustainable Urban Mobility</li>
+            <li>Walkability and Accessibility</li>
+          </ul>
+        </div>
+
+        <div class="mini-card">
+          <h3>Applied Interests</h3>
+          <ul>
+            <li>Tram-Bus Network Coordination</li>
+            <li>Transit Accessibility Evaluation</li>
+            <li>Urban Mobility Indicators</li>
+            <li>Environmental and Economic Effects of Public Transport</li>
+            <li>Data-Driven Transport Systems Analysis</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="section">
+      <h2>Featured Publications</h2>
+
+      <div class="featured-paper">
+        <div class="featured-paper-title">Will new tram lines enhance the connectivity and walkability? A case study of Sakarya</div>
+        <div class="meta"><strong>Yavuz Halimergün</strong>, Abdulkadir Özden, Süleyman Nurullah Adahi Şahin, Hakan Kocaman • 2024</div>
+        <p>
+          A GIS-based study examining how newly proposed tram lines may improve urban connectivity, accessibility, and sustainable mobility in Sakarya.
+        </p>
+        <div class="links">
+          <a href="https://doi.org/10.54517/ssd.v2i5.2886" target="_blank" rel="noopener noreferrer">DOI</a>
+          <a href="/publications/">Publication Archive</a>
+        </div>
+      </div>
+
+      <div class="featured-paper">
+        <div class="featured-paper-title">Are public transport information systems equally effective? Insights from local and migrant passengers</div>
+        <div class="meta">Abdulkadir Özden, Hakan Kocaman, <strong>Yavuz Halimergün</strong> • 2025</div>
+        <p>
+          A conference paper exploring differences in how local and migrant passengers access and benefit from public transport information systems.
+        </p>
+        <div class="links">
+          <a href="https://doi.org/10.31462/icearc2025_ce_tra_987" target="_blank" rel="noopener noreferrer">DOI</a>
+          <a href="/publications/">Publication Archive</a>
+        </div>
+      </div>
+
+      <div class="links">
+        <a href="/publications/">See all publications</a>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Profiles and Contact</h2>
+      <p>
+        You can reach my academic and professional profiles through the links below.
+      </p>
+      <div class="contact-list">
+        <a href="https://www.linkedin.com/in/yavuzcomtr/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=d_5O0dAAAAAJ&amp;hl=tr&amp;authuser=1" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        <a href="https://www.researchgate.net/profile/Yavuz-Halimerguen?ev=hdr_xprf" target="_blank" rel="noopener noreferrer">ResearchGate</a>
+        <a href="https://orcid.org/0000-0001-7363-4029" target="_blank" rel="noopener noreferrer">ORCID</a>
+      </div>
+    </section>
+
+    <div class="footer">
+      © 2026 Yavuz Halimergün
+    </div>
+
+  </div>
+</body>
+</html>
