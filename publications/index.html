@@ -25,6 +25,40 @@
       padding: 32px 18px 60px;
     }
 
+    .nav {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 36px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 20px;
+      color: #0f172a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #0f172a;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: #0b57d0;
+    }
+
     .section-title {
       font-size: 26px;
       margin: 8px 0 16px;
@@ -116,6 +150,15 @@
 </head>
 <body>
   <div class="container">
+    <div class="nav">
+      <a class="brand" href="https://yavuzcomtr.github.io/">Home</a>
+      <div class="nav-links">
+        <a href="/#about">About</a>
+        <a href="/#research">Research</a>
+        <a href="/publications/">Publications</a>
+        <a href="/#contact">Contact</a>
+      </div>
+    </div>
 
     <div class="section-title">Selected Publications</div>
     <div class="section-intro">

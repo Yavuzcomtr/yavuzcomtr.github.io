@@ -8,13 +8,17 @@
   <meta name="author" content="Yavuz Halimergün">
   <style>
     :root {
-      --bg: #f5f7fb;
+      --bg: #eef3f9;
       --card: #ffffff;
       --text: #1f2937;
       --muted: #5b6472;
-      --line: #e5e7eb;
+      --line: #dbe3ee;
       --accent: #0b57d0;
       --accent-dark: #0f172a;
+      --surface-blue: #f4f8ff;
+      --surface-cyan: #f2fbfc;
+      --surface-green: #f5fbf5;
+      --surface-warm: #fffaf2;
     }
 
     * {
@@ -28,7 +32,7 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
+      background: linear-gradient(180deg, var(--bg) 0%, #f7f9fc 38%, #ffffff 100%);
       color: var(--text);
       line-height: 1.7;
     }
@@ -46,6 +50,11 @@
       gap: 36px;
       margin-bottom: 18px;
       flex-wrap: wrap;
+      background: linear-gradient(120deg, #eef5ff 0%, #f4fbff 100%);
+      border: 1px solid #d6e4f8;
+      border-radius: 14px;
+      padding: 14px 18px;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
     }
 
     .brand {
@@ -74,11 +83,12 @@
     }
 
     .hero {
-      background: linear-gradient(135deg, #ffffff, #eef4ff);
-      border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(11, 87, 208, 0.12) 0%, rgba(15, 118, 110, 0.09) 100%);
+      border: 1px solid #d6e4f4;
       border-radius: 18px;
       padding: 34px 28px;
       margin-bottom: 22px;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
     }
 
     .hero-grid {
@@ -195,10 +205,50 @@
 
     .section {
       background: var(--card);
-      border: 1px solid var(--line);
+      border: 1px solid #d7e3f0;
       border-radius: 18px;
       padding: 28px 24px;
       margin-bottom: 18px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background: #9fb8df;
+    }
+
+    #about.section {
+      background: linear-gradient(145deg, rgba(94, 135, 216, 0.12) 0%, rgba(94, 135, 216, 0.05) 100%);
+      border-color: #d3e2fa;
+    }
+
+    #about.section::before {
+      background: #5e87d8;
+    }
+
+    #research.section {
+      background: linear-gradient(145deg, rgba(58, 158, 168, 0.12) 0%, rgba(58, 158, 168, 0.05) 100%);
+      border-color: #cbe9ed;
+    }
+
+    #research.section::before {
+      background: #3a9ea8;
+    }
+
+    #contact.section {
+      background: linear-gradient(145deg, rgba(95, 161, 100, 0.12) 0%, rgba(95, 161, 100, 0.05) 100%);
+      border-color: #d5e9d8;
+    }
+
+    #contact.section::before {
+      background: #5fa164;
     }
 
     .section h2 {
@@ -220,10 +270,41 @@
     }
 
     .mini-card {
-      border: 1px solid var(--line);
+      border: 1px solid #dbe4ee;
       border-radius: 14px;
       padding: 18px;
-      background: #fbfcfe;
+      background: #ffffff;
+      box-shadow: 0 6px 14px rgba(15, 23, 42, 0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mini-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      height: 4px;
+      background: #a9bfdf;
+    }
+
+    .mini-card:first-child {
+      background: linear-gradient(180deg, rgba(94, 135, 216, 0.13) 0%, rgba(255, 255, 255, 0.92) 100%);
+      border-color: #d7e4fc;
+    }
+
+    .mini-card:first-child::before {
+      background: #5e87d8;
+    }
+
+    .mini-card:last-child {
+      background: linear-gradient(180deg, rgba(209, 168, 87, 0.14) 0%, rgba(255, 255, 255, 0.92) 100%);
+      border-color: #efdfbf;
+    }
+
+    .mini-card:last-child::before {
+      background: #d1a857;
     }
 
     .mini-card h3 {
@@ -293,14 +374,7 @@
     }
 
     .contact-list a {
-      display: inline-block;
       text-decoration: none;
-      color: var(--accent);
-      font-weight: 700;
-      border: 1px solid var(--line);
-      padding: 10px 14px;
-      border-radius: 10px;
-      background: #fff;
     }
 
     .contact-list a:hover {
@@ -461,10 +535,30 @@
         You can reach my academic and professional profiles through the links below.
       </p>
       <div class="contact-list">
-        <a href="https://www.linkedin.com/in/yavuzcomtr/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://scholar.google.com/citations?user=d_5O0dAAAAAJ&amp;hl=tr&amp;authuser=1" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-        <a href="https://www.researchgate.net/profile/Yavuz-Halimerguen?ev=hdr_xprf" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-        <a href="https://orcid.org/0000-0001-7363-4029" target="_blank" rel="noopener noreferrer">ORCID</a>
+        <a class="btn linkedin" href="https://www.linkedin.com/in/yavuzcomtr/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5ZM3 9h4v12H3V9Zm7 0h3.83v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.52c0-1.32-.02-3.02-1.84-3.02-1.84 0-2.12 1.44-2.12 2.92V21h-4V9Z"/>
+          </svg>
+          LinkedIn
+        </a>
+        <a class="btn scholar" href="https://scholar.google.com/citations?user=d_5O0dAAAAAJ&amp;hl=tr&amp;authuser=1" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M12 2 1 9l11 7 9-5.73V17h2V9L12 2Zm-6.5 9.87V16c0 2.49 3.13 4.5 6.5 4.5s6.5-2.01 6.5-4.5v-4.13L12 16 5.5 11.87Z"/>
+          </svg>
+          Google Scholar
+        </a>
+        <a class="btn researchgate" href="https://www.researchgate.net/profile/Yavuz-Halimerguen?ev=hdr_xprf" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M4 4h8.2c3.2 0 5.8 2.3 5.8 5.4 0 2.5-1.7 4.6-4.2 5.2L18 20h-3.3l-3.7-4.9H8V20H4V4Zm4 3v5h3.7c1.4 0 2.3-1 2.3-2.4S13.1 7 11.7 7H8Z"/>
+          </svg>
+          ResearchGate
+        </a>
+        <a class="btn orcid" href="https://orcid.org/0000-0001-7363-4029" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20ZM8.5 7.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM7 11h3v7H7v-7Zm4 0h4.5a3.5 3.5 0 0 1 0 7H11v-7Zm3.9 2.2H14v2.6h.9a1.3 1.3 0 1 0 0-2.6Z"/>
+          </svg>
+          ORCID
+        </a>
       </div>
     </section>
 
