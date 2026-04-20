@@ -68,6 +68,11 @@
       color: var(--accent-dark);
     }
 
+    .brand:hover,
+    .brand:focus-visible {
+      color: #0b57d0;
+    }
+
     .nav-links {
       display: flex;
       gap: 28px;
@@ -82,8 +87,24 @@
       font-weight: 700;
     }
 
-    .nav-links a:hover {
-      color: var(--accent);
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--accent-dark);
+    }
+
+    .nav-links a.nav-about:hover,
+    .nav-links a.nav-about:focus-visible {
+      color: #6b7280;
+    }
+
+    .nav-links a.nav-publications:hover,
+    .nav-links a.nav-publications:focus-visible {
+      color: #2f855a;
+    }
+
+    .nav-links a.nav-contact:hover,
+    .nav-links a.nav-contact:focus-visible {
+      color: #b7791f;
     }
 
     .hero {
@@ -102,7 +123,7 @@
     }
 
     h1 {
-      margin: 0 0 10px;
+      margin: 0 0 22px;
       font-size: 44px;
       line-height: 1.18;
       color: #0b1f5e;
@@ -322,7 +343,7 @@
     .mini-card h3 {
       margin-top: 0;
       margin-bottom: 10px;
-      font-size: 18px;
+      font-size: 20px;
       color: var(--accent-dark);
     }
 
@@ -330,11 +351,11 @@
       margin: 0;
       padding-left: 18px;
       color: #374151;
-      font-size: 15px;
+      font-size: 17px;
     }
 
     .mini-card li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .featured-paper {
@@ -431,12 +452,11 @@
   <div class="container">
 
     <div class="nav">
-      <a class="brand" href="https://yavuzcomtr.github.io/">Home</a>
+      <a class="brand nav-home" href="https://yavuzcomtr.github.io/">Home</a>
       <div class="nav-links">
-        <a href="/about/">About</a>
-        <a href="#research">Research</a>
-        <a href="/publications/">Publications</a>
-        <a href="/contact/">Contact</a>
+        <a class="nav-about" href="/about/">About</a>
+        <a class="nav-publications" href="/publications/">Publications</a>
+        <a class="nav-contact" href="/contact/">Contact</a>
       </div>
     </div>
 
@@ -451,7 +471,7 @@
           </div>
           <div class="hero-text">
             <p>
-              Welcome to my personal academic website. My work focuses on transport planning, public transport integration, GIS-based spatial analysis, sustainable urban mobility, and accessibility-oriented transport systems research.
+              Welcome to my personal website. My work focuses on transport planning, public transport integration, GIS-based spatial analysis, sustainable urban mobility, and accessibility-oriented transport systems research.
             </p>
             <p>
               I am particularly interested in how rail and bus systems can be integrated to improve efficiency, accessibility, and environmental performance.

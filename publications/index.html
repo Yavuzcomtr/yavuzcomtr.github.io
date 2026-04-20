@@ -7,6 +7,14 @@
   <meta name="description" content="Academic publications, conference papers, and research outputs of Yavuz Halimergün in transport planning, GIS, public transport integration, and sustainable urban mobility.">
   <meta name="author" content="Yavuz Halimergün">
   <style>
+    :root {
+      --bg: #edf6ef;
+      --text: #1f2937;
+      --muted: #5b6472;
+      --accent: #2f855a;
+      --accent-dark: #1f3a2d;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -14,15 +22,18 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f6f7f9;
-      color: #1f2937;
+      background: linear-gradient(180deg, var(--bg) 0%, #f7f9fc 38%, #ffffff 100%);
+      color: var(--text);
       line-height: 1.65;
     }
 
     .container {
-      max-width: 920px;
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 32px 18px 60px;
+      padding: 20px 16px 10px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     .nav {
@@ -30,8 +41,13 @@
       justify-content: center;
       align-items: center;
       gap: 36px;
-      margin-bottom: 18px;
+      margin-bottom: 12px;
       flex-wrap: wrap;
+      background: linear-gradient(120deg, #eef5ff 0%, #f4fbff 100%);
+      border: 1px solid #d6e4f8;
+      border-radius: 14px;
+      padding: 10px 14px;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
     }
 
     .brand {
@@ -39,7 +55,12 @@
       text-decoration: none;
       font-weight: 700;
       font-size: 20px;
-      color: #0f172a;
+      color: var(--accent-dark);
+    }
+
+    .brand:hover,
+    .brand:focus-visible {
+      color: #0b57d0;
     }
 
     .nav-links {
@@ -51,33 +72,73 @@
 
     .nav-links a {
       text-decoration: none;
-      color: #0f172a;
+      color: var(--accent-dark);
       font-size: 20px;
       font-weight: 700;
     }
 
-    .nav-links a:hover {
-      color: #0b57d0;
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--accent-dark);
     }
 
-    .section-title {
-      font-size: 26px;
-      margin: 8px 0 16px;
-      color: #111827;
+    .nav-links a.nav-about:hover,
+    .nav-links a.nav-about:focus-visible {
+      color: #6b7280;
+    }
+
+    .nav-links a.nav-publications:hover,
+    .nav-links a.nav-publications:focus-visible {
+      color: #2f855a;
+    }
+
+    .nav-links a.nav-contact:hover,
+    .nav-links a.nav-contact:focus-visible {
+      color: #b7791f;
+    }
+
+    .section {
+      background: linear-gradient(145deg, rgba(80, 160, 98, 0.13) 0%, rgba(80, 160, 98, 0.06) 100%);
+      border: 1px solid #cfe7d6;
+      border-radius: 18px;
+      padding: 28px 24px;
+      margin-bottom: 12px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background: #4f9d61;
+    }
+
+    .section h1 {
+      margin: 0 0 14px;
+      font-size: 36px;
+      color: #1f5a3c;
     }
 
     .section-intro {
       color: #4b5563;
-      margin-bottom: 18px;
-      font-size: 15px;
+      margin: 0;
+      font-size: 16px;
     }
 
     .paper {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
+      background: linear-gradient(145deg, rgba(80, 160, 98, 0.11) 0%, rgba(80, 160, 98, 0.05) 100%);
+      border: 1px solid #d2e8d8;
+      border-radius: 18px;
       padding: 22px 20px;
-      margin-bottom: 18px;
+      margin-bottom: 12px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+      position: relative;
+      overflow: hidden;
     }
 
     .paper-title {
@@ -110,7 +171,7 @@
 
     .links a {
       text-decoration: none;
-      color: #0b57d0;
+      color: #2f855a;
       font-weight: 600;
       font-size: 14px;
       word-break: break-word;
@@ -121,16 +182,16 @@
     }
 
     .footer {
-      margin-top: 28px;
-      padding-top: 16px;
-      border-top: 1px solid #d1d5db;
+      margin-top: auto;
+      padding-top: 12px;
       font-size: 14px;
-      color: #6b7280;
+      color: var(--muted);
+      text-align: center;
     }
 
     @media (max-width: 640px) {
       .container {
-        padding: 20px 12px 40px;
+        padding: 14px 10px 16px;
       }
 
       .paper {
@@ -152,19 +213,20 @@
 <body>
   <div class="container">
     <div class="nav">
-      <a class="brand" href="https://yavuzcomtr.github.io/">Home</a>
+      <a class="brand nav-home" href="https://yavuzcomtr.github.io/">Home</a>
       <div class="nav-links">
-        <a href="/about/">About</a>
-        <a href="/#research">Research</a>
-        <a href="/publications/">Publications</a>
-        <a href="/contact/">Contact</a>
+        <a class="nav-about" href="/about/">About</a>
+        <a class="nav-publications" href="/publications/">Publications</a>
+        <a class="nav-contact" href="/contact/">Contact</a>
       </div>
     </div>
 
-    <div class="section-title">Selected Publications</div>
-    <div class="section-intro">
-      A curated list of journal articles, conference papers, and research contributions related to public transport systems, GIS-based mobility analysis, and sustainable transport planning.
-    </div>
+    <section class="section">
+      <h1>Publications</h1>
+      <div class="section-intro">
+        A curated list of journal articles, conference papers, and research contributions related to public transport systems, GIS-based mobility analysis, and sustainable transport planning.
+      </div>
+    </section>
 
     <div class="paper">
       <div class="paper-title">Will new tram lines enhance the connectivity and walkability? A case study of Sakarya</div>
@@ -219,7 +281,7 @@
     </div>
 
     <div class="footer">
-      If any full-text file is unavailable or if you would like to request a copy for academic purposes, please contact the author through the profiles above.
+      © 2026 Yavuz Halimergün
     </div>
 
   </div>

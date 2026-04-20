@@ -8,13 +8,13 @@
   <meta name="author" content="Yavuz Halimergün">
   <style>
     :root {
-      --bg: #eef3f9;
+      --bg: #f3f4f6;
       --card: #ffffff;
       --text: #1f2937;
-      --muted: #5b6472;
-      --line: #dbe3ee;
-      --accent: #0b57d0;
-      --accent-dark: #0f172a;
+      --muted: #6b7280;
+      --line: #d1d5db;
+      --accent: #4b5563;
+      --accent-dark: #111827;
     }
 
     * {
@@ -32,7 +32,10 @@
     .container {
       max-width: 1080px;
       margin: 0 auto;
-      padding: 28px 18px 56px;
+      padding: 20px 16px 10px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     .nav {
@@ -40,12 +43,12 @@
       justify-content: center;
       align-items: center;
       gap: 36px;
-      margin-bottom: 18px;
+      margin-bottom: 12px;
       flex-wrap: wrap;
-      background: linear-gradient(120deg, #eef5ff 0%, #f4fbff 100%);
-      border: 1px solid #d6e4f8;
+      background: linear-gradient(120deg, #f3f4f6 0%, #f9fafb 100%);
+      border: 1px solid #d1d5db;
       border-radius: 14px;
-      padding: 14px 18px;
+      padding: 10px 14px;
       box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
     }
 
@@ -55,6 +58,11 @@
       font-weight: 700;
       font-size: 20px;
       color: var(--accent-dark);
+    }
+
+    .brand:hover,
+    .brand:focus-visible {
+      color: #0b57d0;
     }
 
     .nav-links {
@@ -71,16 +79,32 @@
       font-weight: 700;
     }
 
-    .nav-links a:hover {
-      color: var(--accent);
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--accent-dark);
+    }
+
+    .nav-links a.nav-about:hover,
+    .nav-links a.nav-about:focus-visible {
+      color: #6b7280;
+    }
+
+    .nav-links a.nav-publications:hover,
+    .nav-links a.nav-publications:focus-visible {
+      color: #2f855a;
+    }
+
+    .nav-links a.nav-contact:hover,
+    .nav-links a.nav-contact:focus-visible {
+      color: #b7791f;
     }
 
     .section {
-      background: linear-gradient(145deg, rgba(94, 135, 216, 0.12) 0%, rgba(94, 135, 216, 0.05) 100%);
-      border: 1px solid #d3e2fa;
+      background: linear-gradient(145deg, rgba(107, 114, 128, 0.14) 0%, rgba(107, 114, 128, 0.06) 100%);
+      border: 1px solid #d1d5db;
       border-radius: 18px;
       padding: 28px 24px;
-      margin-bottom: 18px;
+      margin-bottom: 12px;
       box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
       position: relative;
       overflow: hidden;
@@ -93,19 +117,19 @@
       top: 0;
       bottom: 0;
       width: 5px;
-      background: #5e87d8;
+      background: #6b7280;
     }
 
     .section h1 {
       margin: 0 0 14px;
       font-size: 36px;
-      color: #0b1f5e;
+      color: #1f2937;
     }
 
     .section p {
       margin-top: 0;
       color: #374151;
-      font-size: 16px;
+      font-size: 18px;
     }
 
     .footer {
@@ -113,6 +137,7 @@
       color: var(--muted);
       font-size: 14px;
       padding: 12px 0 0;
+      margin-top: auto;
     }
 
     @media (max-width: 820px) {
@@ -129,12 +154,11 @@
 <body>
   <div class="container">
     <div class="nav">
-      <a class="brand" href="https://yavuzcomtr.github.io/">Home</a>
+      <a class="brand nav-home" href="https://yavuzcomtr.github.io/">Home</a>
       <div class="nav-links">
-        <a href="/about/">About</a>
-        <a href="/#research">Research</a>
-        <a href="/publications/">Publications</a>
-        <a href="/contact/">Contact</a>
+        <a class="nav-about" href="/about/">About</a>
+        <a class="nav-publications" href="/publications/">Publications</a>
+        <a class="nav-contact" href="/contact/">Contact</a>
       </div>
     </div>
 
