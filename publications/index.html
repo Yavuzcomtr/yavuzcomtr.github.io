@@ -177,8 +177,59 @@
       word-break: break-word;
     }
 
+    .apa-toggle {
+      border: 0;
+      background: transparent;
+      color: #2f855a;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 0;
+      cursor: pointer;
+    }
+
     .links a:hover {
       text-decoration: underline;
+    }
+
+    .apa-toggle:hover {
+      text-decoration: underline;
+    }
+
+    .apa-box {
+      margin-top: 10px;
+      padding: 10px 12px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid #cfe3d5;
+      border-radius: 10px;
+    }
+
+    .apa-text {
+      margin: 0 0 8px;
+      font-size: 14px;
+      color: #1f2937;
+      line-height: 1.5;
+    }
+
+    .copy-apa {
+      border: 1px solid #2f855a;
+      background: #ffffff;
+      color: #2f855a;
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .copy-apa:hover {
+      background: #eef8f1;
+    }
+
+    .copy-status {
+      margin-left: 8px;
+      font-size: 12px;
+      color: #166534;
+      font-weight: 600;
     }
 
     .footer {
@@ -229,17 +280,6 @@
     </section>
 
     <div class="paper">
-      <div class="paper-title">Will new tram lines enhance the connectivity and walkability? A case study of Sakarya</div>
-      <div class="authors"><strong>Yavuz Halimergün</strong>, Abdulkadir Özden, Süleyman Nurullah Adahi Şahin, Hakan Kocaman</div>
-      <div class="journal">Sustainable Social Development, 2024, 2(5), Article ID 2886.</div>
-      <div class="abstract"><strong>Abstract:</strong> This study evaluates the potential effects of newly proposed tram lines on urban connectivity and accessibility in Sakarya. Using a GIS-based analytical framework, the paper investigates how rail system investments may improve public transport integration and strengthen sustainable urban mobility.</div>
-      <div class="links">
-        <a href="https://doi.org/10.54517/ssd.v2i5.2886" target="_blank" rel="noopener noreferrer">DOI</a>
-        <a href="papers/Will new tram lines enhance the connectivity and walkability A case study of Sakarya.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
-      </div>
-    </div>
-
-    <div class="paper">
       <div class="paper-title">Are public transport information systems equally effective? Insights from local and migrant passengers</div>
       <div class="authors">Abdulkadir Özden, Hakan Kocaman, <strong>Yavuz Halimergün</strong></div>
       <div class="journal">4th International Civil Engineering and Architecture Conference (ICEARC), Trabzon, Türkiye, 2025, pp. 2614–2621.</div>
@@ -247,16 +287,11 @@
       <div class="links">
         <a href="https://doi.org/10.31462/icearc2025_ce_tra_987" target="_blank" rel="noopener noreferrer">DOI</a>
         <a href="papers/Are public transport information systems equally effective Insights from local and migrant passengers.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
+        <button class="apa-toggle" type="button" data-apa-target="apa-1">APA</button>
       </div>
-    </div>
-
-    <div class="paper">
-      <div class="paper-title">Walking Towards Sustainability: Optimizing Public Transit through the Walkable Cities by Time-Oriented Model</div>
-      <div class="authors">Süleyman Nurullah Adahi Şahin, <strong>Yavuz Halimergün</strong>, Abdulkadir Özden</div>
-      <div class="journal">60th ISOCARP World Planning Congress, Siena, Italy, 2024.</div>
-      <div class="abstract"><strong>Abstract:</strong> This study discusses the relationship between walkability and public transport efficiency through a time-oriented urban accessibility perspective. The paper emphasizes that strengthening pedestrian access to transit systems can improve both public transport use and sustainable urban form.</div>
-      <div class="links">
-        <a href="papers/Walking Towards Sustainability Optimizing Public Transit though the Walkable Cities by Time-Oriented Model.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
+      <div class="apa-box" id="apa-1" hidden>
+        <p class="apa-text" id="apa-text-1">Özden, A., Kocaman, H., &amp; Halimergün, Y. (2025). Are public transport information systems equally effective? Insights from local and migrant passengers. In Proceedings of the 4th International Civil Engineering and Architecture Conference (ICEARC) (pp. 2614-2621). https://doi.org/10.31462/icearc2025_ce_tra_987</p>
+        <button class="copy-apa" type="button" data-copy-target="apa-text-1">Copy APA</button><span class="copy-status" aria-live="polite"></span>
       </div>
     </div>
 
@@ -267,6 +302,11 @@
       <div class="abstract"><strong>Abstract:</strong> This paper explores the use of deep learning-based building detection for micro-scale transport planning. By integrating GIS and intelligent transportation systems applications, the study demonstrates how detailed spatial data can support more precise and responsive planning processes.</div>
       <div class="links">
         <a href="papers/Mikro Ölçekli Ulaşım Planlaması İçin Derin Öğrenme ile Bina Tespiti CBS ve AUS Uygulamaları.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
+        <button class="apa-toggle" type="button" data-apa-target="apa-2">APA</button>
+      </div>
+      <div class="apa-box" id="apa-2" hidden>
+        <p class="apa-text" id="apa-text-2">Kocaman, H., Özden, A., Adahi Şahin, S. N., Özkurt, C., Korkmaz, A., &amp; Halimergün, Y. (2025). Mikro Ölçekli Ulaşım Planlaması İçin Derin Öğrenme ile Bina Tespiti: CBS ve AUS Uygulamaları. In 1. Ulusal Akıllı Ulaşım Sistemleri Konferansı (Conf-ITS’25) (pp. 231-242).</p>
+        <button class="copy-apa" type="button" data-copy-target="apa-text-2">Copy APA</button><span class="copy-status" aria-live="polite"></span>
       </div>
     </div>
 
@@ -277,6 +317,42 @@
       <div class="abstract"><strong>Abstract:</strong> This study evaluates rail system infrastructures in Türkiye from the perspective of earthquake risk using GIS-based analysis methods. The paper focuses on the spatial vulnerability of critical transport infrastructure and underlines the importance of resilience-oriented transport planning.</div>
       <div class="links">
         <a href="papers/Deprem Riskine Karşı Raylı Sistem Altyapılarının CBS ile Analizi Türkiye Örneği.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
+        <button class="apa-toggle" type="button" data-apa-target="apa-3">APA</button>
+      </div>
+      <div class="apa-box" id="apa-3" hidden>
+        <p class="apa-text" id="apa-text-3">Kocaman, H., Adahi Şahin, S. N., Halimergün, Y., &amp; Özden, A. (2025). Deprem Riskine Karşı Raylı Sistem Altyapılarının CBS ile Analizi: Türkiye Örneği. In 7th International Symposium on Natural Hazards and Disaster Management.</p>
+        <button class="copy-apa" type="button" data-copy-target="apa-text-3">Copy APA</button><span class="copy-status" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">Will new tram lines enhance the connectivity and walkability? A case study of Sakarya</div>
+      <div class="authors"><strong>Yavuz Halimergün</strong>, Abdulkadir Özden, Süleyman Nurullah Adahi Şahin, Hakan Kocaman</div>
+      <div class="journal">Sustainable Social Development, 2024, 2(5), Article ID 2886.</div>
+      <div class="abstract"><strong>Abstract:</strong> This study evaluates the potential effects of newly proposed tram lines on urban connectivity and accessibility in Sakarya. Using a GIS-based analytical framework, the paper investigates how rail system investments may improve public transport integration and strengthen sustainable urban mobility.</div>
+      <div class="links">
+        <a href="https://doi.org/10.54517/ssd.v2i5.2886" target="_blank" rel="noopener noreferrer">DOI</a>
+        <a href="papers/Will new tram lines enhance the connectivity and walkability A case study of Sakarya.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
+        <button class="apa-toggle" type="button" data-apa-target="apa-4">APA</button>
+      </div>
+      <div class="apa-box" id="apa-4" hidden>
+        <p class="apa-text" id="apa-text-4">Halimergün, Y., Özden, A., Adahi Şahin, S. N., &amp; Kocaman, H. (2024). Will new tram lines enhance the connectivity and walkability? A case study of Sakarya. Sustainable Social Development, 2(5), Article 2886. https://doi.org/10.54517/ssd.v2i5.2886</p>
+        <button class="copy-apa" type="button" data-copy-target="apa-text-4">Copy APA</button><span class="copy-status" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="paper">
+      <div class="paper-title">Walking Towards Sustainability: Optimizing Public Transit through the Walkable Cities by Time-Oriented Model</div>
+      <div class="authors">Süleyman Nurullah Adahi Şahin, <strong>Yavuz Halimergün</strong>, Abdulkadir Özden</div>
+      <div class="journal">60th ISOCARP World Planning Congress, Siena, Italy, 2024.</div>
+      <div class="abstract"><strong>Abstract:</strong> This study discusses the relationship between walkability and public transport efficiency through a time-oriented urban accessibility perspective. The paper emphasizes that strengthening pedestrian access to transit systems can improve both public transport use and sustainable urban form.</div>
+      <div class="links">
+        <a href="papers/Walking Towards Sustainability Optimizing Public Transit though the Walkable Cities by Time-Oriented Model.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
+        <button class="apa-toggle" type="button" data-apa-target="apa-5">APA</button>
+      </div>
+      <div class="apa-box" id="apa-5" hidden>
+        <p class="apa-text" id="apa-text-5">Adahi Şahin, S. N., Halimergün, Y., &amp; Özden, A. (2024). Walking towards sustainability: Optimizing public transit through the walkable cities by time-oriented model. In Proceedings of the 60th ISOCARP World Planning Congress.</p>
+        <button class="copy-apa" type="button" data-copy-target="apa-text-5">Copy APA</button><span class="copy-status" aria-live="polite"></span>
       </div>
     </div>
 
@@ -285,5 +361,35 @@
     </div>
 
   </div>
+  <script>
+    const apaToggles = document.querySelectorAll(".apa-toggle");
+    apaToggles.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-apa-target");
+        const box = document.getElementById(targetId);
+        if (!box) return;
+        box.hidden = !box.hidden;
+      });
+    });
+
+    const copyButtons = document.querySelectorAll(".copy-apa");
+    copyButtons.forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const textId = btn.getAttribute("data-copy-target");
+        const textEl = document.getElementById(textId);
+        const statusEl = btn.nextElementSibling;
+        if (!textEl) return;
+        try {
+          await navigator.clipboard.writeText(textEl.textContent.trim());
+          if (statusEl) statusEl.textContent = "Copied";
+          setTimeout(() => {
+            if (statusEl) statusEl.textContent = "";
+          }, 1600);
+        } catch (e) {
+          if (statusEl) statusEl.textContent = "Copy failed";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
