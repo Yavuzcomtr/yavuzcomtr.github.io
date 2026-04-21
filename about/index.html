@@ -53,10 +53,12 @@
     }
 
     .brand {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
       text-decoration: none;
       font-weight: 700;
       font-size: 20px;
+      line-height: 1.2;
       color: var(--accent-dark);
     }
 
@@ -73,10 +75,13 @@
     }
 
     .nav-links a {
+      display: inline-flex;
+      align-items: center;
       text-decoration: none;
       color: var(--accent-dark);
       font-size: 20px;
       font-weight: 700;
+      line-height: 1.2;
     }
 
     .nav-links a:hover,
@@ -97,6 +102,28 @@
     .nav-links a.nav-contact:hover,
     .nav-links a.nav-contact:focus-visible {
       color: #b7791f;
+    }
+
+    .nav-links a.nav-transportlabmobility {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid #8bd7ce;
+      background: linear-gradient(135deg, #e6fbf8 0%, #d9f3ff 100%);
+      color: #0f766e;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .nav-links a.nav-transportlabmobility:hover,
+    .nav-links a.nav-transportlabmobility:focus-visible {
+      color: #0b5f92;
+      border-color: #5dbac5;
+      background: linear-gradient(135deg, #d6f5f0 0%, #cfeeff 100%);
+      text-decoration: none;
     }
 
     .section {
@@ -159,6 +186,7 @@
         <a class="nav-about" href="/about/">About</a>
         <a class="nav-publications" href="/publications/">Publications</a>
         <a class="nav-contact" href="/contact/">Contact</a>
+        <a class="nav-transportlabmobility" href="https://transportlabmobility.com/" aria-label="TransportLab Mobility">TransportLab Mobility</a>
       </div>
     </div>
 
