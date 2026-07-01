@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rastgele Sayı Üretici | Yavuz Halimergün</title>
+  <meta name="description" content="En az ve en çok değerleri girerek rastgele sayı üreten basit bir araç.">
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #5b6472;
+      --accent: #7c3aed;
+      --accent-dark: #4c1d95;
+      --line: #e5def7;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #f8f5ff 0%, #f3f7ff 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 32px 16px 48px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 14px 32px rgba(76, 29, 149, 0.12);
+      padding: 24px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 16px;
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      text-decoration: underline;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 32px;
+      color: var(--accent-dark);
+    }
+
+    .lead {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      font-size: 16px;
+      color: var(--text);
+      background: #fcfbff;
+    }
+
+    input:focus {
+      outline: 2px solid rgba(124, 58, 237, 0.25);
+      border-color: var(--accent);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    button:hover,
+    button:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .btn-generate {
+      background: var(--accent);
+      color: #ffffff;
+      box-shadow: 0 10px 20px rgba(124, 58, 237, 0.2);
+    }
+
+    .btn-reset {
+      background: #f3ebff;
+      color: var(--accent-dark);
+    }
+
+    .result {
+      padding: 18px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f7f2ff 0%, #f2f8ff 100%);
+      border: 1px solid var(--line);
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .result-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .result-value {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--accent-dark);
+      line-height: 1;
+    }
+
+    .result-hint {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .error {
+      color: #b91c1c;
+      font-weight: 700;
+      font-size: 14px;
+      min-height: 1.2em;
+    }
+
+    @media (max-width: 640px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <a class="back-link" href="/">← Ana sayfaya dön</a>
+      <h1>Rastgele Sayı Üretici</h1>
+      <p class="lead">İstediğiniz aralıkta bir sayı üretmek için en küçük ve en büyük değeri girin. Sonuç otomatik olarak gösterilecektir.</p>
+
+      <div class="form-grid">
+        <label for="minValue">
+          En az
+          <input id="minValue" name="minValue" type="number" inputmode="numeric" placeholder="Örn. 1">
+        </label>
+        <label for="maxValue">
+          En çok
+          <input id="maxValue" name="maxValue" type="number" inputmode="numeric" placeholder="Örn. 100">
+        </label>
+      </div>
+
+      <div class="actions">
+        <button class="btn-generate" id="generateButton" type="button">Sayı Üret</button>
+        <button class="btn-reset" id="resetButton" type="button">Temizle</button>
+      </div>
+
+      <div class="error" id="errorMessage" role="alert" aria-live="polite"></div>
+
+      <div class="result" aria-live="polite">
+        <span class="result-label">Üretilen sayı</span>
+        <div class="result-value" id="resultValue">—</div>
+        <div class="result-hint">En az ve en çok değerlerini girip "Sayı Üret" butonuna basın.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const minInput = document.getElementById('minValue');
+    const maxInput = document.getElementById('maxValue');
+    const generateButton = document.getElementById('generateButton');
+    const resetButton = document.getElementById('resetButton');
+    const resultValue = document.getElementById('resultValue');
+    const errorMessage = document.getElementById('errorMessage');
+
+    function generateRandomNumber(min, max) {
+      const safeMin = Math.ceil(min);
+      const safeMax = Math.floor(max);
+      return Math.floor(Math.random() * (safeMax - safeMin + 1)) + safeMin;
+    }
+
+    function validateAndGenerate() {
+      const min = Number(minInput.value);
+      const max = Number(maxInput.value);
+
+      errorMessage.textContent = '';
+
+      if (Number.isNaN(min) || Number.isNaN(max)) {
+        errorMessage.textContent = 'Lütfen her iki alana da sayı girin.';
+        return;
+      }
+
+      if (min > max) {
+        errorMessage.textContent = 'En az değer, en çok değerden büyük olamaz.';
+        return;
+      }
+
+      const randomNumber = generateRandomNumber(min, max);
+      resultValue.textContent = randomNumber;
+    }
+
+    generateButton.addEventListener('click', validateAndGenerate);
+
+    [minInput, maxInput].forEach((input) => {
+      input.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          validateAndGenerate();
+        }
+      });
+    });
+
+    resetButton.addEventListener('click', () => {
+      minInput.value = '';
+      maxInput.value = '';
+      resultValue.textContent = '—';
+      errorMessage.textContent = '';
+      minInput.focus();
+    });
+  </script>
+</body>
+</html>
